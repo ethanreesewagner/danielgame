@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+   <style>
+       html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+   </style>
+    <meta charset="utf-8" />
+  </head>
+  <body style="text-align: center;background-color:green;">
+    <script>
+        var a=170;
+var b=200;
+var c=230;
+var d=200;
+var e=false;
+var f=['You got caught for spying -3',
+'You reached the patriot camp +2','move +1','move+2','move -3','move -1','you got shot in the leg move back -3','you discovered master richardson is a spy +2','King George III blocked Boston Harbor -3','Your tavern was Quartered by Soldiers -3','You won the battle of breed’s hill +4','You crossed the icy bridge +2','Your tarred friend is saved with butter +1','You successfully got the information from Colonel Stockdale repetitively +4','Your friend got hanged -3'
+]
+function setup() {
+  createCanvas(windowWidth, 400);
+}
+function draw(){
+  background('green');
+ for(j=0; j<4; j++){
+  for(i=0; i<windowWidth/80; i++){
+  make(i*80,(j-1)*160);}
+  if(j==1){make(0,80);}
+  else if(j==2){
+  make(windowWidth-80,240)}}
+  fill('blue');
+  strokeWeight(0);
+  circle(a,b,50);
+  fill('red');
+  circle(c,d,50);
+  strokeWeight(10);
+}
+function make(x,y){
+  fill('#add8e6');
+  square(x,y,80);
+}
+function mouseDragged(){
+  if(e){
+  a=mouseX;
+  b=mouseY;
+  }else{
+  c=mouseX;
+  d=mouseY;
+  }
+}
+    </script>
+<button style="background-color:lime;" onclick='e=!e; document.getElementById("card").innerHTML=random(f)'>
+    <h1>Player Swap</h1>
+</button>
+<h3 id="card">This is a card</h3>
+  </body>
+</html>
